@@ -23,7 +23,7 @@ def post_facebook_message(fbid, recevied_message):
             msg_text = random.choice(text[token])
             break
     if not msg_text:
-        msg_text = "I didn't understand! Send 'hi', 'who are you ?', 'bye' for a reply" 
+        msg_text = "I didn't understand! Send 'hi', 'who', 'bye' for a reply" 
                    
     post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
     response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":msg_text}})
